@@ -32,6 +32,9 @@
                         this.dogBreed = data.message.split('/')[4] || 'Mixed';
                     }
                 },
+                mounted() {
+                    this.getDog();
+                }
             })
         </script>
     </body>
