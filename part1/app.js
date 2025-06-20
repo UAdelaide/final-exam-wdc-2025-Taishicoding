@@ -76,7 +76,7 @@ let db;
         '2025-06-13 09:30:00', 45, 'North Haven', 'completed')
       `);
       await db.execute(`
-        INSERT INTO WalkApplications (request_id, email, password_hash, role) VALUES
+        INSERT INTO WalkApplications (request_id, walker_id, status) VALUES
         ('alice123', 'alice@example.com', 'hashed123', 'owner'),
         ('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
         ('carol123', 'carol@example.com', 'hashed789', 'owner'),
