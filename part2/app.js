@@ -93,7 +93,9 @@ app.post('/api/users/logout', (req, res) => {
         res.json({ message: 'logged out succsesfully'})
     };
 };
-app.get('')
+app.get('/api/users/session', (req,res) => {
+    if (req.session.user)
+})
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
