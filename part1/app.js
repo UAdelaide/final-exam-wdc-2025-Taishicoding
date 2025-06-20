@@ -81,12 +81,9 @@ let db;
         ((SELECT request_id FROM WalkRequests WHERE dog_id = (SELECT dog_id FROM Dogs Where name = 'Sasha')), (SELECT user_id FROM Users WHERE username = 'aiko123'),'accepted')
       `);
       await db.execute(`
-        INSERT INTO Users (username, email, password_hash, role) VALUES
-        ('alice123', 'alice@example.com', 'hashed123', 'owner'),
-        ('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
-        ('carol123', 'carol@example.com', 'hashed789', 'owner'),
-        ('aiko123', 'sasha@example.com', 'hashed101', 'walker'),
-        ('ken123', 'sasha123@example.com', 'hashed102', 'owner')
+        INSERT INTO WalkRatings (username, email, password_hash, role) VALUES
+        ((SELECT request_id FROM WalkRequests WHERE dog_id = (SELECT dog_id FROM Dogs Where name = 'Bella')), (SELECT user_id FROM Users WHERE username = 'bobwalker'),'accepted'),
+        ((SELECT request_id FROM WalkRequests WHERE dog_id = (SELECT dog_id FROM Dogs Where name = 'Sasha')), (SELECT user_id FROM Users WHERE username = 'aiko123'),'accepted')
       `);
     }
   } catch (err) {
