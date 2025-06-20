@@ -110,6 +110,7 @@ const { isDeepStrictEqual } = require('util');
 
 app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
-
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () =>)
 // Export the app instead of listening here
 module.exports = app;
