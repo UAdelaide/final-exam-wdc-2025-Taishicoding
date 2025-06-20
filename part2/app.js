@@ -44,8 +44,11 @@ app.get('/walker-dashboard.html', (req,res) => {
     if (!req.session.user || req.session.user.role !== 'walker'){
         return res.redirect('/');
     }
-    res.sendFile(path.join(__dirname, 'owner-dashboard.html'));
+    res.sendFile(path.join(__dirname, 'walker-dashboard.html'));
 });
+
+// Login ROute
+
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
