@@ -121,7 +121,7 @@ app.get('/api/walkers/summary', async (req, res) => {
     }));
     res.json(formattedWalkers);
   } catch (err) {
-    res.status(500).json({ error: 'Failed to fetch books' });
+    res.status(500).json({ error: 'Failed to walker summary' });
   }
 });
 
