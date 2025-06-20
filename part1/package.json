@@ -1,9 +1,9 @@
 {
-  "name": "starthere",
+  "name": "dog-walking-api",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node app.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
