@@ -49,42 +49,50 @@ app.get('/walker-dashboard.html', (req,res) => {
 
 // Login ROute
 app.post('/api/users/login', async (req, res) => {
-    try {
-        const { username, password} = req.body;
-        if (!username || !password){
-            return res.status(400).json({error: 'Username and password required'});
-        }
-        const db = await mysql.createConnection(dbConfig);
-        const [users] = await db.execute(
-            'SELECT user_id, username, email, password_hash, role FROM Users WHERE username = ?',
-            [username]
-        );
-        await db.end();
-        if (users.length === 0){
-            return res.status(401).json({ error: "Invalid Username or password"});
-        }
-        const user = users[0];
-        const passwordFromHash = user.password_hash.replace('hashed', '');
-        if (password !== passwordFromHash){
-            return res.status(401).json({error: "Invalid Username or password"});
-        }
-        req.session.user = {
-            user_id: user.user_id,
-            username: user.username,
-            email: user.email,
-            role: user.role
-        };
-        res.json({
-        message: 'Login succesfull',
-        username: user.username,
-        role: user.role,
-        user_id: user.user_id
-    });
-    } catch (error){
-    console.error('Login Error');
+  try {
+    const { username, password } = req.body;
+    if (!username || !password) {
+      return res.status(400).json({ error: 'Username and password required' });
     }
-},
-}
+
+    const db = await mysql.createConnection(dbConfig);
+    const [users] = await db.execute(
+      'SELECT user_id, username, email, password_hash, role FROM Users WHERE username = ?',
+      [username]
+    );
+    await db.end();
+
+    if (users.length === 0) {
+      return res.status(401).json({ error: "Invalid Username or password" });
+    }
+
+    const user = users[0];
+    const passwordFromHash = user.password_hash.replace('hashed', '');
+
+    if (password !== passwordFromHash) {
+      return res.status(401).json({ error: "Invalid Username or password" });
+    }
+
+    req.session.user = {
+      user_id: user.user_id,
+      username: user.username,
+      email: user.email,
+      role: user.role
+    };
+
+    res.json({
+      message: 'Login successful',
+      username: user.username,
+      role: user.role,
+      user_id: user.user_id
+    });
+
+  } catch (error) {
+    console.error('Login Error', error);
+    res.status(500).json({ error: 'Server error during login' });
+  }
+});
+
 // logout
 app.post('/api/users/logout', (req, res) => {
     req.session.destroy((err) => {
