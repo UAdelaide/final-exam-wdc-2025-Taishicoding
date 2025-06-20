@@ -103,7 +103,7 @@ app.get('/api/dogs', async (req, res) => {
 // Route to return all walk requests
 app.get('/api/walkrequests/open', async (req, res) => {
   try {
-    const [requests] = await db.execute('SELECT ');
+    const [requests] = await db.execute('SELECT wr.request_id, d.name as dog_name, wr.requested');
     res.json(requests);
   } catch (err) {
     res.status(500).json({ error: 'Failed to fetch open walk requests' });
