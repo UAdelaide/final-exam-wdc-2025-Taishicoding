@@ -72,4 +72,4 @@ INSERT INTO Users (username, email, password_hash, role) VALUES
 
  INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) VALUES
  ((SELECT dog_id FROM Dogs WHERE name = 'Max' AND owner_id = (SELECT user_id FROM Users WHERE username = 'alice123'))
- )
+ '2025-06-10 08:00:00')
