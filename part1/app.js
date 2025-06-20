@@ -112,7 +112,7 @@ app.get('/api/walkrequests/open', async (req, res) => {
 // Route to return walker summary w ratings and finished walks
 app.get('/api/walkers/summary', async (req, res) => {
   try {
-    const [walkers] = await db.execute('SELECT u.username as walker_username, COUNT(wr.rating');
+    const [walkers] = await db.execute('SELECT u.username as walker_username, COUNT(wr.rating_id) as total_ratings, CASE WHEN COUNT');
     const formattedWalkers = walkers.map(walker => ({
         walker_username: walker.walker_username,
         total_ratings: parseInt(walker.total_ratings),
