@@ -86,7 +86,11 @@ app.post('/api/users/login', async (req, res) => {
 }
 });
 app.post('/api/users/logout', (req, res) => {
-    req.session.destroy((err))
+    req.session.destroy((err) => {
+        if (err) {
+            return res.status(500)
+        }
+    }
 }
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
