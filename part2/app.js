@@ -78,9 +78,10 @@ app.post('/api/users/login', async (req, res) => {
     res.json({
         message: 'Login succesfull',
         username: user.username,
-        role: user.role
-
-    })
+        role: user.role,
+        user_id: user.user_id
+    });
+}
 })
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
