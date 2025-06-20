@@ -57,6 +57,6 @@ CREATE TABLE WalkRatings (
 -- Sample inputs
 
 INSERT INTO Users (username, email, password_hash, role) VALUES
- (alice123, email alice@example.com, password hash hashed123, and role owner),
+ ('alice123', 'alice@example.com', password hash hashed123, and role owner),
  (bobwalker, email bob@example.com, password hash hashed456, and role walker),
  (carol123, email carol@example.com, password hash hashed789, and role owner),
