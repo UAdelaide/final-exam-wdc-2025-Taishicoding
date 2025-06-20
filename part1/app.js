@@ -124,7 +124,7 @@ app.get('/api/walkers/summary', async (req, res) => {
     res.status(500).json({ error: 'Failed to walker summary' });
   }
 });
-app.get
+app.get('/',(req,res)=>)
 app.use(express.static(path.join(__dirname, 'public')));
 module.exports = app;
 app.listen(3000, ()=>{
