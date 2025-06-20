@@ -69,7 +69,8 @@
                 'Content-Type' : 'application/json'
               },
               body: JSON.stringify({
-                username: this.login
+                username: this.loginForm.username,
+                password: this.loginForm.password
               })
 
             }
