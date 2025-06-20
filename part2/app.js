@@ -38,8 +38,8 @@ app.get('/owner-dashboard.html', (req,res)=>{
     if (!req.session.user || req.session.user.role !== 'owner'){
         return res.redirect('/');
     }
-    res.sendFile(path.join)
-})
+    res.sendFile(path.join(__dirname, 'owner-dashboard.html'));
+});
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
