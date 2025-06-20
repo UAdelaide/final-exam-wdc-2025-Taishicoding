@@ -100,7 +100,7 @@ app.get('/api/users/session', (req,res) => {
             user: req.session.user
         });
     } else {
-        res.json({ loggedIN: false})
+        res.json({ loggedIn: false});
     }
 })
 // Routes
