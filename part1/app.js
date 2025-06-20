@@ -113,6 +113,7 @@ app.get('/api/walkrequests/open', async (req, res) => {
 app.get('/api/walkers/summary', async (req, res) => {
   try {
     const [walkers] = await db.execute('SELECT * FROM books');
+    const formattedWalkers = walkers.map(walker =>)
     res.json(formattedWalkers);
   } catch (err) {
     res.status(500).json({ error: 'Failed to fetch books' });
