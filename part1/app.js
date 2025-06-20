@@ -77,11 +77,7 @@ let db;
       `);
       await db.execute(`
         INSERT INTO WalkApplications (request_id, walker_id, status) VALUES
-        ('alice123', 'alice@example.com', 'hashed123', 'owner'),
-        ('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
-        ('carol123', 'carol@example.com', 'hashed789', 'owner'),
-        ('aiko123', 'sasha@example.com', 'hashed101', 'walker'),
-        ('ken123', 'sasha123@example.com', 'hashed102', 'owner')
+        ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Donko', 'small'),
       `);
       await db.execute(`
         INSERT INTO Users (username, email, password_hash, role) VALUES
