@@ -50,7 +50,7 @@ app.get('/walker-dashboard.html', (req,res) => {
 // Login ROute
 app.post('/api/users/login', async (req, res) => {
     try {
-        
+        const { username, password} = req.body
     }
 })
 // Routes
