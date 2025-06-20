@@ -6,7 +6,9 @@ require('dotenv').config();
 
 const app = express();
 // Database config
-
+const dbConfig = {
+    host: 'localhost'
+}
 
 // Middleware
 app.use(express.json());
