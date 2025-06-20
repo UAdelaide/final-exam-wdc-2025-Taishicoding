@@ -35,7 +35,7 @@ app.get('/', (req, res) =>{
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 app.get('/owner-dashboard.html', (req,res)=>{
-    if (!req.session)
+    if (!req.session.user || req.session.user.role !== 'owner')
 })
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
