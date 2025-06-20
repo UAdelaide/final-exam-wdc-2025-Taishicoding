@@ -64,7 +64,11 @@
         async login(){
           try {
             const response = await fetch('/api/users/login',{
-              method: 'POST'
+              method: 'POST',
+              headers: {
+                'Content-Type' : 
+              }
+
             }
           }
         }
