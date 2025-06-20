@@ -5,6 +5,8 @@ const mysql = require('mysql2/promise');
 require('dotenv').config();
 
 const app = express();
+// Database config
+
 
 // Middleware
 app.use(express.json());
