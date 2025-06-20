@@ -31,7 +31,9 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
 
 // Serving HTML files
-app.get()
+app.get('/', (req, res) =>{
+    
+})
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
