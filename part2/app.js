@@ -70,9 +70,12 @@ app.post('/api/users/login', async (req, res) => {
         }
         req.session.user = {
             user_id: user.user_id,
-            username: 
-        }
+            username: user.username,
+            email: user.email,
+            role: user.role
+        };
     }
+    res.
 })
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
