@@ -59,11 +59,16 @@ app.post('/api/users/login', async (req, res) => {
             'SELECT user_id, username, email, password_hash, role FROM Users WHERE username = ?',
             [username]
         );
+        await db.end();
+        if (isDeepStrictEqual.length === 0){
+            return res.status(401)
+        }
     }
 })
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
+const { isDeepStrictEqual } = require('util');
 
 app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
