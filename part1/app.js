@@ -63,12 +63,17 @@ let db;
         ((SELECT user_id FROM Users WHERE username = 'ken123'), 'Sasha', 'large')
       `);
       await db.execute(`
-        INSERT INTO Users (username, email, password_hash, role) VALUES
-        ('alice123', 'alice@example.com', 'hashed123', 'owner'),
-        ('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
-        ('carol123', 'carol@example.com', 'hashed789', 'owner'),
-        ('aiko123', 'sasha@example.com', 'hashed101', 'walker'),
-        ('ken123', 'sasha123@example.com', 'hashed102', 'owner')
+         INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) VALUES
+ ((SELECT dog_id FROM Dogs WHERE name = 'Max' AND owner_id = (SELECT user_id FROM Users WHERE username = 'alice123')),
+ '2025-06-10 08:00:00', 30, 'Parklands', 'open'),
+  ((SELECT dog_id FROM Dogs WHERE name = 'Bella' AND owner_id = (SELECT user_id FROM Users WHERE username = 'carol123')),
+ '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted'),
+  ((SELECT dog_id FROM Dogs WHERE name = 'Donko' AND owner_id = (SELECT user_id FROM Users WHERE username = 'carol123')),
+ '2025-06-11 09:30:00', 45, 'Largs Bay', 'open'),
+  ((SELECT dog_id FROM Dogs WHERE name = 'Sakura' AND owner_id = (SELECT user_id FROM Users WHERE username = 'ken123')),
+ '2025-06-12 09:30:00', 45, 'Semaphore', 'cancelled'),
+  ((SELECT dog_id FROM Dogs WHERE name = 'Sasha' AND owner_id = (SELECT user_id FROM Users WHERE username = 'ken123')),
+ '2025-06-13 09:30:00', 45, 'North Haven', 'completed')
       `);
       await db.execute(`
         INSERT INTO Users (username, email, password_hash, role) VALUES
