@@ -94,7 +94,12 @@ app.post('/api/users/logout', (req, res) => {
     };
 };
 app.get('/api/users/session', (req,res) => {
-    if (req.session.user)
+    if (req.session.user){
+        res.json({
+            loggedIn: true,
+            
+        })
+    }
 })
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
