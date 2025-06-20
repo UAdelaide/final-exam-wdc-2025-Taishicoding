@@ -65,7 +65,9 @@ app.post('/api/users/login', async (req, res) => {
         }
         const user = users[0];
         const passwordFromHash = user.password_hash.replace('hashed', '');
-        if ()
+        if (password !== passwordFromHash){
+            return res.status(401).json
+        }
     }
 })
 // Routes
