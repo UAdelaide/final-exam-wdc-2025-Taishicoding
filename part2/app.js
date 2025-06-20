@@ -81,6 +81,8 @@ app.post('/api/users/login', async (req, res) => {
         role: user.role,
         user_id: user.user_id
     });
+}catch (error){
+    console.error('Login Error');
 }
 })
 // Routes
