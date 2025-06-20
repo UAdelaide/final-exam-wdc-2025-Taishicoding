@@ -16,7 +16,9 @@ const dbConfig = {
 // session config
 
 app.use(session({
-    
+    secret: 'secret_pass'
+    resave: false,
+    saveUninitialized
 }))
 
 // Middleware
