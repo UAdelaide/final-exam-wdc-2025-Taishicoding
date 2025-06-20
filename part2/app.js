@@ -34,7 +34,9 @@ app.use(express.static(path.join(__dirname, '/public')));
 app.get('/', (req, res) =>{
     res.sendFile(path.join(__dirname, 'index.html'));
 });
-app.get('/owner-dashboard.html')
+app.get('/owner-dashboard.html', (req,res)=>{
+    if (!req.session)
+})
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
