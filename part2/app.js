@@ -74,13 +74,14 @@ app.post('/api/users/login', async (req, res) => {
             email: user.email,
             role: user.role
         };
-    }
-    res.json({
+        res.json({
         message: 'Login succesfull',
         username: user.username,
         role: user.role,
         user_id: user.user_id
     });
+    }
+
 }catch (error){
     console.error('Login Error');
 }
