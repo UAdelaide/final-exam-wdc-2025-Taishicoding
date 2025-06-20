@@ -75,7 +75,7 @@ INSERT INTO Users (username, email, password_hash, role) VALUES
  '2025-06-10 08:00:00', 30, 'Parklands', 'open'),
 
   ((SELECT dog_id FROM Dogs WHERE name = 'Max' AND owner_id = (SELECT user_id FROM Users WHERE username = 'carol123'))
- '2025-06-10 08:00:00', 30, 'Parklands', 'open'),
+ '2025-06-10 08:00:00', 30, 'Beachside Ave', 'accepted'),
 
   ((SELECT dog_id FROM Dogs WHERE name = 'Max' AND owner_id = (SELECT user_id FROM Users WHERE username = 'carol123'))
  '2025-06-10 08:00:00', 30, 'Parklands', 'open'),
