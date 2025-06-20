@@ -77,8 +77,8 @@ INSERT INTO Users (username, email, password_hash, role) VALUES
  '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted'),
   ((SELECT dog_id FROM Dogs WHERE name = 'Donko' AND owner_id = (SELECT user_id FROM Users WHERE username = 'carol123')),
  '2025-06-11 09:30:00', 45, 'Largs Bay', 'open'),
-  ((SELECT dog_id FROM Dogs WHERE name = 'Sakura' AND owner_id = (SELECT user_id FROM Users WHERE username = 'ken123'))
+  ((SELECT dog_id FROM Dogs WHERE name = 'Sakura' AND owner_id = (SELECT user_id FROM Users WHERE username = 'ken123')),
  '2025-06-12 09:30:00', 45, 'Semaphore', 'cancelled'),
-  ((SELECT dog_id FROM Dogs WHERE name = 'Sasha' AND owner_id = (SELECT user_id FROM Users WHERE username = 'ken123'))
+  ((SELECT dog_id FROM Dogs WHERE name = 'Sasha' AND owner_id = (SELECT user_id FROM Users WHERE username = 'ken123')),
  '2025-06-13 09:30:00', 45, 'North Haven', 'completed');
 
