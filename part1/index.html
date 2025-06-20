@@ -6,7 +6,7 @@
         <style>
             body {
                 margin: 0;
-                transition: background-color 0.3s;
+                transition: background color 0.3s;
             }
             h2 {
             color: red;
@@ -16,12 +16,7 @@
             }
             .btn {
                 padding: 4px 8px;
-                font-size: 12px;
-                color: #fff;
-                background-color: #333;
-                border: none;
-                border-radius: 4px;
-                cursor: pointer;
+                font-size: ;
             }
             .bad-text {
             font-size: 8px;
@@ -32,7 +27,7 @@
         }
         </style>
     </head>
-    <body :style="{ backgroundColor: backgroundColor}" @click="toggleBackground">
+    <body>
         <div id ="app">
             <h1>The Daily Dog of the Day</h1>
             <img :src="dogImage" width="200" @click="getDog" />
@@ -48,8 +43,7 @@
                     return {
                         dogImage: '',
                         dogName: 'Sasha',
-                        dogBreed: 'Dalmation',
-                        backgroundColor: '#ffffff'
+                        dogBreed: 'Dalmation'
                     }
                 },
                 methods: {
@@ -58,16 +52,12 @@
                         const data = await response.json();
                         this.dogImage = data.message;
                         this.dogBreed = data.message.split('/')[4] || 'Mixed';
-                    },
-                    toggleBackground(){
-                        this.backgroundColor =
-                        this.backgroundColor === '#ffffff' ? '#f2f2f2' : '#ffffff';
                     }
                 },
                 mounted() {
                     this.getDog();
                 }
-            }).mount('body');
+            }).mount('#app');
         </script>
     </body>
 </html>
