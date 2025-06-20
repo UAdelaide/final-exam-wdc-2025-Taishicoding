@@ -13,6 +13,11 @@ const dbConfig = {
     database: 'DogWalkService'
 };
 
+// session config
+
+app.use(session({
+    
+}))
 
 // Middleware
 app.use(express.json());
