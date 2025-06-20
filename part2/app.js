@@ -97,8 +97,10 @@ app.get('/api/users/session', (req,res) => {
     if (req.session.user){
         res.json({
             loggedIn: true,
-            
-        })
+            user: req.session.user
+        });
+    } else {
+        res.json({ loggedIN: false})
     }
 })
 // Routes
