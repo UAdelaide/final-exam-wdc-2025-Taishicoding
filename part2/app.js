@@ -16,14 +16,15 @@ const dbConfig = {
 // session config
 
 app.use(session({
-    secret: 'secret_pass'
+    secret: 'secret_pass',
     resave: false,
     saveUninitialized: false,
     cookie: {
         secure: false,
         maxAge: 24 * 60 * 60 * 1000
     }
-}))
+}));
+
 
 // Middleware
 app.use(express.json());
