@@ -112,7 +112,7 @@ app.get('/api/walkrequests/open', async (req, res) => {
 // Route to return walker summary w ratings and finished walks
 app.get('/api/walkers/summary', async (req, res) => {
   try {
-    const [walkers] = await db.execute('SELECT u.username as walker_username, COUNT(wr.rating_id) as total_ratings, CASE WHEN COUNT(wr.rating_id) > 0 THEN AVG(wr.rating) ELSE NULL END as average_rating, COUNT(DISTINCT wa.application_id) as completed_walks FROM Users u LEFT JOIN WalkApplications wa ON u.user');
+    const [walkers] = await db.execute('SELECT u.username as walker_username, COUNT(wr.rating_id) as total_ratings, CASE WHEN COUNT(wr.rating_id) > 0 THEN AVG(wr.rating) ELSE NULL END as average_rating, COUNT(DISTINCT wa.application_id) as completed_walks FROM Users u LEFT JOIN WalkApplications wa ON u.user_id = wa.walker_id AND wa.status = 'acce');
     const formattedWalkers = walkers.map(walker => ({
         walker_username: walker.walker_username,
         total_ratings: parseInt(walker.total_ratings),
