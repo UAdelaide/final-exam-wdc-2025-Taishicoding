@@ -100,7 +100,7 @@ app.get('/api/dogs', async (req, res) => {
     res.status(500).json({ error: 'Failed to fetch dogs' });
   }
 });
-// Route to return books as JSON
+// Route to return all walk requests
 app.get('/', async (req, res) => {
   try {
     const [books] = await db.execute('SELECT * FROM books');
