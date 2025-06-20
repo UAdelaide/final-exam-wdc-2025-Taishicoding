@@ -48,7 +48,7 @@ app.get('/walker-dashboard.html', (req,res) => {
 });
 
 // Login ROute
-
+app.post('/api/users/login')
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
