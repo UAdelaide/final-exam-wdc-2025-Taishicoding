@@ -128,4 +128,6 @@ app.get('/api/walkers/summary', async (req, res) => {
 app.use(express.static(path.join(__dirname, 'public')));
 
 module.exports = app;
-app.listen(3000, ())
+app.listen(3000, ()=>{
+    
+})
