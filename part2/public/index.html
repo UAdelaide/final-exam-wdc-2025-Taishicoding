@@ -83,7 +83,9 @@
                   window.location.href = '/walker-dashboard.html';
                 }
                 }, 1000);
-              } else PageRevealEvent
+              } else {
+                this.errorMessage = data.error || 'Login Failed';
+              }
             }
           }
         }
