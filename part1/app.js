@@ -109,7 +109,7 @@ app.get('/api/walkrequests/open', async (req, res) => {
     res.status(500).json({ error: 'Failed to fetch open walk requests' });
   }
 });
-// Route to return books as JSON
+// Route to return walker summary w ratings and finished walks
 app.get('/', async (req, res) => {
   try {
     const [books] = await db.execute('SELECT * FROM books');
