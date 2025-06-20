@@ -101,7 +101,7 @@ app.get('/api/dogs', async (req, res) => {
   }
 });
 // Route to return all walk requests
-app.get('/', async (req, res) => {
+app.get('/api/walkrequests/open', async (req, res) => {
   try {
     const [books] = await db.execute('SELECT * FROM books');
     res.json(books);
