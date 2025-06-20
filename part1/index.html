@@ -58,6 +58,9 @@
                         const data = await response.json();
                         this.dogImage = data.message;
                         this.dogBreed = data.message.split('/')[4] || 'Mixed';
+                    },
+                    toggleBackground(){
+                        
                     }
                 },
                 mounted() {
