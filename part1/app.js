@@ -115,7 +115,7 @@ app.get('/api/walkers/summary', async (req, res) => {
     const [walkers] = await db.execute('SELECT * FROM books');
     const formattedWalkers = walkers.map(walker => ({
         walker_username: walker.walker_username,
-        
+        total_ratings: parseInt(walker.total_ratings)
 
     }));
     res.json(formattedWalkers);
