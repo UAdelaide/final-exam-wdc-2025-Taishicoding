@@ -110,10 +110,10 @@ app.get('/api/walkrequests/open', async (req, res) => {
   }
 });
 // Route to return walker summary w ratings and finished walks
-app.get('/', async (req, res) => {
+app.get('/api/walkers/summary', async (req, res) => {
   try {
-    const [books] = await db.execute('SELECT * FROM books');
-    res.json(books);
+    const [walkers] = await db.execute('SELECT * FROM books');
+    res.json(walkers);
   } catch (err) {
     res.status(500).json({ error: 'Failed to fetch books' });
   }
