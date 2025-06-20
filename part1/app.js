@@ -54,6 +54,38 @@ let db;
         ('aiko123', 'sasha@example.com', 'hashed101', 'walker'),
         ('ken123', 'sasha123@example.com', 'hashed102', 'owner')
       `);
+      await db.execute(`
+        INSERT INTO Users (username, email, password_hash, role) VALUES
+        ('alice123', 'alice@example.com', 'hashed123', 'owner'),
+        ('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
+        ('carol123', 'carol@example.com', 'hashed789', 'owner'),
+        ('aiko123', 'sasha@example.com', 'hashed101', 'walker'),
+        ('ken123', 'sasha123@example.com', 'hashed102', 'owner')
+      `);
+      await db.execute(`
+        INSERT INTO Users (username, email, password_hash, role) VALUES
+        ('alice123', 'alice@example.com', 'hashed123', 'owner'),
+        ('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
+        ('carol123', 'carol@example.com', 'hashed789', 'owner'),
+        ('aiko123', 'sasha@example.com', 'hashed101', 'walker'),
+        ('ken123', 'sasha123@example.com', 'hashed102', 'owner')
+      `);
+      await db.execute(`
+        INSERT INTO Users (username, email, password_hash, role) VALUES
+        ('alice123', 'alice@example.com', 'hashed123', 'owner'),
+        ('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
+        ('carol123', 'carol@example.com', 'hashed789', 'owner'),
+        ('aiko123', 'sasha@example.com', 'hashed101', 'walker'),
+        ('ken123', 'sasha123@example.com', 'hashed102', 'owner')
+      `);
+      await db.execute(`
+        INSERT INTO Users (username, email, password_hash, role) VALUES
+        ('alice123', 'alice@example.com', 'hashed123', 'owner'),
+        ('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
+        ('carol123', 'carol@example.com', 'hashed789', 'owner'),
+        ('aiko123', 'sasha@example.com', 'hashed101', 'walker'),
+        ('ken123', 'sasha123@example.com', 'hashed102', 'owner')
+      `);
     }
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
