@@ -33,7 +33,7 @@
         </style>
     </head>
     <body :style="{ backgroundColor: backgroundColor}" @click="toggleBackground">
-        <div id ="app" @click>
+        <div id ="app" @click.stop>
             <h1>The Daily Dog of the Day</h1>
             <img :src="dogImage" width="200" @click="getDog" />
             <p>{{ dogName }} - {{ dogBreed }}</p>
