@@ -82,7 +82,7 @@ app.post('/api/users/login', async (req, res) => {
     });
     } catch (error){
     console.error('Login Error');
-    };
+    }
 }
 // logout
 app.post('/api/users/logout', (req, res) => {
