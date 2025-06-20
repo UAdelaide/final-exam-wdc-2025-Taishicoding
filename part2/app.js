@@ -85,7 +85,9 @@ app.post('/api/users/login', async (req, res) => {
     console.error('Login Error');
 }
 });
-app.post('/api/users/logout')
+app.post('/api/users/logout', (req, res) => {
+    req.session.destroy((err))
+}
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
