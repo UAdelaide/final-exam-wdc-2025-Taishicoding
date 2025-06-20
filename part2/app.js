@@ -40,6 +40,12 @@ app.get('/owner-dashboard.html', (req,res)=>{
     }
     res.sendFile(path.join(__dirname, 'owner-dashboard.html'));
 });
+app.get('/walker-dashboard.html', (req,res)=>{
+    if (!req.session.user || req.session.user.role !== 'walker'){
+        return res.redirect('/');
+    }
+    res.sendFile(path.join(__dirname, 'owner-dashboard.html'));
+});
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
