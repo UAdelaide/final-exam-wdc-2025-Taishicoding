@@ -94,7 +94,8 @@ let db;
 // Route to return Dogs size, and owner info
 app.get('/api/dogs', async (req, res) => {
   try {
-    const [boo] = await db.execute('SELECT * FROM books');
+    const [dogs] = await db.execute('
+        ');
     res.json(books);
   } catch (err) {
     res.status(500).json({ error: 'Failed to fetch books' });
