@@ -99,7 +99,7 @@ app.post('/api/users/logout', (req, res) => {
         if (err) {
             return res.status(500).json({ error: 'Could not log out'});
         }
-        res.json({ message: 'logged out succsesfully' })
+        res.json({ message: 'logged out succsesfully' });
     });
 });
 app.get('/api/users/session', (req,res) => {
