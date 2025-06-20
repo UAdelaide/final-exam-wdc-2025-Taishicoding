@@ -56,8 +56,9 @@ app.post('/api/users/login', async (req, res) => {
         }
         const db = await mysql.createConnection(dbConfig);
         const [users] = await db.execute(
-            'SELECT user_id, username, email, password_hash, role FROM '
-        )
+            'SELECT user_id, username, email, password_hash, role FROM Users WHERE username = ?',
+            [username]
+        );
     }
 })
 // Routes
