@@ -70,4 +70,5 @@ INSERT INTO Users (username, email, password_hash, role) VALUES
  ((SELECT user_id FROM Users WHERE username = 'ken123'), 'Sakura', 'medium'),
  ((SELECT user_id FROM Users WHERE username = 'ken123'), 'Sasha', 'large');
 
- INSERT INTO WalkRequests (dog_id, re)
+ INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) VALUES
+ 
