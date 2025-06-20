@@ -66,7 +66,7 @@ app.post('/api/users/login', async (req, res) => {
         const user = users[0];
         const passwordFromHash = user.password_hash.replace('hashed', '');
         if (password !== passwordFromHash){
-            return res.status(401).json
+            return res.status(401).json({error: "Invalid Username or password"});
         }
     }
 })
