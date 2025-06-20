@@ -86,6 +86,8 @@
               } else {
                 this.errorMessage = data.error || 'Login Failed';
               }
+            } catch (error) {
+              console.error('login error')
             }
           }
         }
