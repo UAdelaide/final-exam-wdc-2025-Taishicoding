@@ -32,7 +32,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 
 // Serving HTML files
 app.get('/', (req, res) =>{
-    
+    res.sendFile(path.join(__dirname, 'index.html'));
 })
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
