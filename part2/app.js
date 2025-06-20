@@ -80,9 +80,7 @@ app.post('/api/users/login', async (req, res) => {
         role: user.role,
         user_id: user.user_id
     });
-    }
-
-}catch (error){
+    } catch (error){
     console.error('Login Error');
 }
 // logout
@@ -114,6 +112,6 @@ app.use('/api/users', userRoutes);
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log('Server running on http://localhost:${PORT}');
-})
+});
 // Export the app instead of listening here
 module.exports = app;
