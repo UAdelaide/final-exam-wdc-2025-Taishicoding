@@ -33,7 +33,8 @@ app.use(express.static(path.join(__dirname, '/public')));
 // Serving HTML files
 app.get('/', (req, res) =>{
     res.sendFile(path.join(__dirname, 'index.html'));
-})
+});
+app.get('/owner-dashboard.html')
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
