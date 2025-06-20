@@ -113,11 +113,11 @@ app.get('/api/walkrequests/open', async (req, res) => {
 app.get('/api/walkers/summary', async (req, res) => {
   try {
     const [walkers] = await db.execute('SELECT u.username as walker_username, COUNT(wr.rating_id) as total_ratings, CASE WHEN COUNT(wr.rating_id) > 0 THEN AVG(wr.rating) ELSE NULL END as average_rating, COUNT(DISTINCT wa.application_id) as completed_walks FROM Users u LEFT JOIN WalkApplications wa ON u.user_id = wa.walker_id AND wa.status = "accepted" LEFT JOIN WalkRatings wr ON u.user_id = wr.walker_id WHERE u.role = "walker" GROUP BY u.user_id, u.username ORDER BY u.username');
-    const formattedWalkers = walkers.map(walker => ({
+    const formattedWalkers = walkers.map((walker) => ({
         walker_username: walker.walker_username,
-        total_ratings: parseInt(walker.total_ratings),
+        total_ratings: parseInt(walker.total_ratings, 10),
         average_rating: walker.average_rating ? parseFloat(walker.average_rating) : null,
-        completed_walks: parseInt(walker.completed_walks)
+        completed_walks: parseInt(walker.completed_walks, 10)
     }));
     res.json(formattedWalkers);
   } catch (err) {
