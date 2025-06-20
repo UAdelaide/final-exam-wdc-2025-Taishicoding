@@ -98,7 +98,7 @@ app.post('/api/users/logout', (req, res) => {
     req.session.destroy((err) => {
         if (err) {
             return res.status(500).json({ error: 'Could not log out'});
-        };
+        }
         res.json({ message: 'logged out succsesfully' })
     });
 });
