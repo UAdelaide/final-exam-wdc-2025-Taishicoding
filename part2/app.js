@@ -64,7 +64,7 @@ app.post('/api/users/login', async (req, res) => {
             return res.status(401).json({ error: "Invalid Username or password"});
         }
         const user = users[0];
-        const password
+        const passwordFromHash = user.password_hash.replace
     }
 })
 // Routes
