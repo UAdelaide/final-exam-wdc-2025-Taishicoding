@@ -122,7 +122,9 @@ app.get('/api/dogs/my-dogs', async (req, res) => {
     const [dogs] = await db.execute(
       'SELECT dog_id, name, size FROM Dogs WHERE owner_id = ?',
       [req.session.user.user_id]
-    )
+    );
+    await db.end();
+    res.json(dogs);
   }
 })
 // returning current user if already logged in
