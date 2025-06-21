@@ -92,7 +92,7 @@
         async function loadUserDogs(){
           try{
             const res = await fetch('/api/dogs/my-dogs');
-            
+            userDogs.value = await res.json();
           }
         }
         async function loadWalks() {
