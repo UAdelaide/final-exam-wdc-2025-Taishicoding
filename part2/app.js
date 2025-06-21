@@ -19,7 +19,7 @@ const dbConfig = {
 app.use(session({
     secret: 'secret_pass', // The secret key for securing cookies
     resave: false, // If session has not been edited, do not save
-    saveUninitialized: false,
+    saveUninitialized: false, // Do not create new session untill something new stored
     cookie: {
         secure: false,
         maxAge: 24 * 60 * 60 * 1000
