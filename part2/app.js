@@ -104,6 +104,7 @@ app.post('/api/users/login', async (req, res) => {
 
 // logout
 app.post('/api/users/logout', (req, res) => {
+  // destryoing the session and logging user out
     req.session.destroy((err) => {
         if (err) {
             return res.status(500).json({ error: 'Could not log out'});
