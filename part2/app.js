@@ -112,6 +112,8 @@ app.post('/api/users/logout', (req, res) => {
         res.json({ message: 'logged out succsesfully' });
     });
 });
+// Dogs owned by user
+app.get('')
 // returning current user if already logged in
 app.get('/api/users/session', (req,res) => {
     if (req.session.user){
