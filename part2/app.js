@@ -112,7 +112,7 @@ app.post('/api/users/logout', (req, res) => {
         res.json({ message: 'logged out succsesfully' });
     });
 });
-// Dogs owned by user
+// Dogs owned by user for drop down menu
 app.get('/api/dogs/my-dogs', async (req, res) => {
   try {
     // verifying that user is logged in
