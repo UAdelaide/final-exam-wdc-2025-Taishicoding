@@ -115,11 +115,12 @@ app.post('/api/users/logout', (req, res) => {
 app.get('/api/users/session', (req,res) => {
     if (req.session.user){
         res.json({
-          
+          // user is logged in
             loggedIn: true,
             user: req.session.user
         });
     } else {
+      
         res.json({ loggedIn: false});
     }
 });
