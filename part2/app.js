@@ -54,7 +54,7 @@ app.get('/walker-dashboard.html', (req,res) => {
     res.sendFile(path.join(__dirname, 'walker-dashboard.html'));
 });
 
-// Login ROute
+// Login ROute to authenticate users and create new session
 app.post('/api/users/login', async (req, res) => {
   try {
     const { username, password } = req.body;
