@@ -120,7 +120,7 @@ app.get('/api/dogs/my-dogs', async (req, res) => {
     }
     const db = await mysql.createConnection(dbConfig);
     const [dogs] = await db.execute(
-      
+      'SELECT dog_id, name, size FROM Dogs WHERE owner_id = '
     )
   }
 })
