@@ -115,7 +115,9 @@ app.post('/api/users/logout', (req, res) => {
 // Dogs owned by user
 app.get('/api/dogs/my-dogs', async (req, res) => {
   try {
-    
+    if (!req.session.user){
+      return res.status
+    }
   }
 })
 // returning current user if already logged in
