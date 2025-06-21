@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+// Added for the login function
 const session = require('express-session');
 const mysql = require('mysql2/promise');
 require('dotenv').config();
