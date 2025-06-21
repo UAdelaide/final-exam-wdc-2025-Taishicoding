@@ -37,6 +37,7 @@ app.get('/', (req, res) => {
 });
 // Protected owner dashboard route
 app.get('/owner-dashboard.html', (req,res) => {
+  // make sure that user is 
     if (!req.session.user || req.session.user.role !== 'owner'){
         return res.redirect('/');
     }
