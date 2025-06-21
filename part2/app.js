@@ -119,6 +119,7 @@ app.get('/api/dogs/my-dogs', async (req, res) => {
     if (!req.session.user){
       return res.status(401).json({error: 'Not logged in'});
     }
+    // connecting to database
     const db = await mysql.createConnection(dbConfig);
     const [dogs] = await db.execute(
       'SELECT dog_id, name, size FROM Dogs WHERE owner_id = ?',
