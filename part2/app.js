@@ -39,6 +39,7 @@ app.get('/', (req, res) => {
 app.get('/owner-dashboard.html', (req,res) => {
   // make sure that user is logged in and is an owner
     if (!req.session.user || req.session.user.role !== 'owner'){
+      // If not an owner redirected to login page
         return res.redirect('/');
     }
     res.sendFile(path.join(__dirname, 'owner-dashboard.html'));
