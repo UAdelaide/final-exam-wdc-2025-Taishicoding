@@ -92,8 +92,9 @@
         // function to fetch dogs owned by logged in user
         async function loadUserDogs(){
           try{
-            // calling the api endpoint present in app.js 
+            // calling the api endpoint present in app.js returning users dogs
             const res = await fetch('/api/dogs/my-dogs');
+            //storing dog data in userDogs array
             userDogs.value = await res.json();
           } catch (err){
             error.value = 'Failed to load dogs';
