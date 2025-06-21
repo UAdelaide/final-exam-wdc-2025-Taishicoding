@@ -125,6 +125,8 @@ app.get('/api/dogs/my-dogs', async (req, res) => {
     );
     await db.end();
     res.json(dogs);
+  } catch (error){
+    res.status(500).json({})
   }
 })
 // returning current user if already logged in
