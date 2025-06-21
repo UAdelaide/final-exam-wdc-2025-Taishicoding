@@ -115,6 +115,7 @@ app.post('/api/users/logout', (req, res) => {
 // Dogs owned by user
 app.get('/api/dogs/my-dogs', async (req, res) => {
   try {
+    // verifying that user is logged in
     if (!req.session.user){
       return res.status(401).json({error: 'Not logged in'});
     }
