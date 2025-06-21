@@ -111,6 +111,7 @@ app.post('/api/users/logout', (req, res) => {
         res.json({ message: 'logged out succsesfully' });
     });
 });
+// re
 app.get('/api/users/session', (req,res) => {
     if (req.session.user){
         res.json({
