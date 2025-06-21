@@ -19,9 +19,10 @@
   <div class="card">
     <div class="card-header bg-primary text-white text-center">
     </div>
-    <--
+    <!-- login form calling login on submit-->
     <form @submit.prevent="login">
       <div class="mb-3">
+        <!--username-->
         <label for="username" class="form-label">Username</label>
         <input
          v-model="loginForm.username"
