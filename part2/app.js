@@ -111,10 +111,11 @@ app.post('/api/users/logout', (req, res) => {
         res.json({ message: 'logged out succsesfully' });
     });
 });
-// re
+// returning current user if already logged in
 app.get('/api/users/session', (req,res) => {
     if (req.session.user){
         res.json({
+          
             loggedIn: true,
             user: req.session.user
         });
