@@ -44,6 +44,7 @@ app.get('/owner-dashboard.html', (req,res) => {
     }
     res.sendFile(path.join(__dirname, 'owner-dashboard.html'));
 });
+// Protected walker d
 app.get('/walker-dashboard.html', (req,res) => {
     if (!req.session.user || req.session.user.role !== 'walker'){
         return res.redirect('/');
