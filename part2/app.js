@@ -17,7 +17,7 @@ const dbConfig = {
 // session config
 
 app.use(session({
-    secret: 'secret_pass',
+    secret: 'secret_pass', // The secret key for securing cookies
     resave: false,
     saveUninitialized: false,
     cookie: {
