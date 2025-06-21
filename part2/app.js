@@ -81,7 +81,7 @@ app.post('/api/users/login', async (req, res) => {
     if (password !== passwordFromHash) {
       return res.status(401).json({ error: "Invalid Username or password" });
     }
-
+ // creating a user session
     req.session.user = {
       user_id: user.user_id,
       username: user.username,
