@@ -143,14 +143,14 @@
 
         onMounted(() => {
           checkSession();
-          loadUserDogs();
+          loadUserDogs(); 
           loadWalks();
         });
 
         return {
           form,
           walks,
-          userDogs,
+          userDogs, //ading user dogs
           message,
           error,
           currentUser,
