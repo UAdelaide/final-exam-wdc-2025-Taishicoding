@@ -116,7 +116,8 @@ app.post('/api/users/logout', (req, res) => {
 app.get('/api/dogs/my-dogs', async (req, res) => {
   try {
     if (!req.session.user){
-      return res.status
+      return res.status(401).json({error: 'Not logged in'});
+      
     }
   }
 })
