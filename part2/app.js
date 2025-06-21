@@ -120,7 +120,7 @@ app.get('/api/users/session', (req,res) => {
             user: req.session.user
         });
     } else {
-      
+      // user is not logged in
         res.json({ loggedIn: false});
     }
 });
