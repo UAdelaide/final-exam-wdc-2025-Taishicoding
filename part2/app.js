@@ -127,6 +127,7 @@ app.get('/api/dogs/my-dogs', async (req, res) => {
       [req.session.user.user_id]
     );
     await db.end();
+    // Returning array of users dogs
     res.json(dogs);
   } catch (error){
     res.status(500).json({error: 'Error'});
