@@ -35,6 +35,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
+// Protected owner dashboard route
 app.get('/owner-dashboard.html', (req,res) => {
     if (!req.session.user || req.session.user.role !== 'owner'){
         return res.redirect('/');
