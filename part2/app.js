@@ -76,7 +76,8 @@ app.post('/api/users/login', async (req, res) => {
 
     const user = users[0];
     const passwordFromHash = user.password_hash.replace('hashed', '');
- // As the passwords were fake "Hashed"
+ // As the passwords were fake "Hashed" this line is to remove the hashed word of password
+ // would replace with Bcrypt in real world scenario
     if (password !== passwordFromHash) {
       return res.status(401).json({ error: "Invalid Username or password" });
     }
