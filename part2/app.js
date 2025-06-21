@@ -62,7 +62,7 @@ app.post('/api/users/login', async (req, res) => {
       // ensuring username and password fields both have input
       return res.status(400).json({ error: 'Username and password required' });
     }
-
+    // connecting to the database and conducting search for user
     const db = await mysql.createConnection(dbConfig);
     const [users] = await db.execute(
       'SELECT user_id, username, email, password_hash, role FROM Users WHERE username = ?',
