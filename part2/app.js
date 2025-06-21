@@ -113,7 +113,11 @@ app.post('/api/users/logout', (req, res) => {
     });
 });
 // Dogs owned by user
-app.get('/api/dogs/my-dogs', async (req, res))
+app.get('/api/dogs/my-dogs', async (req, res) => {
+  try {
+    
+  }
+})
 // returning current user if already logged in
 app.get('/api/users/session', (req,res) => {
     if (req.session.user){
