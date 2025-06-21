@@ -59,6 +59,7 @@ app.post('/api/users/login', async (req, res) => {
   try {
     const { username, password } = req.body;
     if (!username || !password) {
+      // ensuring username and password fields both have input
       return res.status(400).json({ error: 'Username and password required' });
     }
 
