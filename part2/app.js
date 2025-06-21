@@ -48,6 +48,7 @@ app.get('/owner-dashboard.html', (req,res) => {
 app.get('/walker-dashboard.html', (req,res) => {
   // make sure that user is logged in and is an walker
     if (!req.session.user || req.session.user.role !== 'walker'){
+       // If not an walker redirected to login page
         return res.redirect('/');
     }
     res.sendFile(path.join(__dirname, 'walker-dashboard.html'));
