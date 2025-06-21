@@ -89,8 +89,10 @@
         const userDogs = ref([]);
         const message = ref('');
         const error = ref('');
+        // function to fetch dogs owned by logged in user
         async function loadUserDogs(){
           try{
+            // calling the api endpoint present in app.js 
             const res = await fetch('/api/dogs/my-dogs');
             userDogs.value = await res.json();
           } catch (err){
