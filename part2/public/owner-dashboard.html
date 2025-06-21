@@ -93,6 +93,8 @@
           try{
             const res = await fetch('/api/dogs/my-dogs');
             userDogs.value = await res.json();
+          } catch (err){
+            error.value = 
           }
         }
         async function loadWalks() {
