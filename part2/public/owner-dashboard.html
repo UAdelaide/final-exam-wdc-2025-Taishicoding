@@ -142,6 +142,8 @@
         }
 
         onMounted(() => {
+          checkSession();
+          loadUserDogs();
           loadWalks();
         });
 
