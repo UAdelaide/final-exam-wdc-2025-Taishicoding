@@ -118,7 +118,10 @@ app.get('/api/dogs/my-dogs', async (req, res) => {
     if (!req.session.user){
       return res.status(401).json({error: 'Not logged in'});
     }
-    const db = await mysql.createConnection(dbConfig)
+    const db = await mysql.createConnection(dbConfig);
+    const [dogs] = await db.execute(
+      
+    )
   }
 })
 // returning current user if already logged in
